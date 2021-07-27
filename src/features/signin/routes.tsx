@@ -1,5 +1,7 @@
-import { AppRoute } from "defines/App"
-import SignIn from "."
+import { AppRoute } from "defines/AppRoute"
+import { lazy } from "react"
+
+const SignIn = lazy(() => import("."))
 
 const signInRoutes: AppRoute[] = [
   {

@@ -1,6 +1,9 @@
-import Home from "."
+import { AppRoute } from "defines/AppRoute"
+import { lazy } from "react"
 
-const homeRoutes = [
+const Home = lazy(() => import("."))
+
+const homeRoutes: AppRoute[] = [
   {
     path: "/",
     exact: true,
