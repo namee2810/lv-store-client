@@ -1,7 +1,13 @@
-import React from "react"
+import LoadingScreen from "components/LoadingScreen"
+import React, { Suspense } from "react"
+import AppRouter from "router"
 
 function App() {
-  return <div>Hi</div>
+  return (
+    <Suspense fallback={LoadingScreen}>
+      <AppRouter />
+    </Suspense>
+  )
 }
 
 export default App
