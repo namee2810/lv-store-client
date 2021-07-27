@@ -5,6 +5,7 @@ const SignIn = lazy(() => import("."))
 
 const signInRoutes: AppRoute[] = [
   {
+    name: "Sign in",
     path: "/signin",
     exact: true,
     component: SignIn,

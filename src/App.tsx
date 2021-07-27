@@ -5,9 +5,11 @@ import "styles/styles.scss"
 
 function App() {
   return (
-    <Suspense fallback={LoadingScreen}>
-      <AppRouter />
-    </Suspense>
+    <>
+      <Suspense fallback={LoadingScreen}>
+        <AppRouter />
+      </Suspense>
+    </>
   )
 }
 
