@@ -1,8 +1,22 @@
 import { createGlobalStyle } from "styled-components"
 
-const GlobalStyle = createGlobalStyle`
-  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+export type Color =
+  | "primary"
+  | "primary_hover"
+  | "success"
+  | "success_hover"
+  | "error"
+  | "error_hover"
+  | "warn"
+  | "warn_hover"
+  | "white"
+  | "black"
+  | "lightgray"
+  | "gray"
+  | "lightblue"
+  | "purple"
 
+const GlobalStyle = createGlobalStyle`
   * {
         
     ::-webkit-scrollbar {
@@ -69,4 +83,4 @@ const device = {
 const theme = {
   colors,
 }
-export { GlobalStyle, theme, device, colors }
+export { GlobalStyle, theme, device }
