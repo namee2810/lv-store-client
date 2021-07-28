@@ -1,5 +1,9 @@
-import React from "react"
+import LoadingScreen from "components/LoadingScreen"
 
 export default function SignIn() {
-  return <div>Sign In</div>
+  return (
+    <div>
+      <LoadingScreen />
+    </div>
+  )
 }
