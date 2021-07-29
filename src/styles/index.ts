@@ -1,21 +1,5 @@
 import { createGlobalStyle } from "styled-components"
 
-export type Color =
-  | "primary"
-  | "primary_hover"
-  | "success"
-  | "success_hover"
-  | "error"
-  | "error_hover"
-  | "warn"
-  | "warn_hover"
-  | "white"
-  | "black"
-  | "lightgray"
-  | "gray"
-  | "lightblue"
-  | "purple"
-
 const GlobalStyle = createGlobalStyle`
   * {
         
@@ -40,9 +24,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-      sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

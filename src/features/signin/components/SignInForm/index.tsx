@@ -4,21 +4,24 @@ import Button from "components/Button"
 import Input from "components/Input"
 import React from "react"
 import { useForm } from "react-hook-form"
+import { useTranslation } from "react-i18next"
 import { toast } from "react-toastify"
 
 export default function SignInForm() {
+  const { t } = useTranslation()
   const { register, handleSubmit } = useForm()
 
   const onValid = (values: any) => {
     console.log(values)
   }
   const onInvalid = (errors: any) => {
-    for (let error in errors) toast.warning(errors[error].message)
+    for (let error in errors) toast.error(errors[error].message)
   }
 
   return (
     <Box
-      p={2}
+      py={3}
+      px={2}
       mt={2}
       elevation={5}
       borderRadius={8}
@@ -28,30 +31,37 @@ export default function SignInForm() {
       <form onSubmit={handleSubmit(onValid, onInvalid)}>
         <Box>
           <Input
-            {...register("username", {
-              required: { value: true, message: "Hãy nhập tên tài khoản" },
+            {...register("email", {
+              required: { value: true, message: t("signIn.emailRequired") },
+              pattern: {
+                value: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+                message: "Email không hợp lệ",
+              },
             })}
-            placeholder="Tài khoản"
+            type="email"
+            placeholder="Email"
             prefix={<UserOutlined />}
+            size="large"
           />
         </Box>
         <Box mt={1}>
           <Input
             {...register("password", {
-              required: { value: true, message: "Hãy nhập mật khẩu" },
+              required: { value: true, message: t("signIn.passwordRequired") },
               minLength: {
-                value: 8,
-                message: "Mật khẩu có độ dài tối thiểu 8 kí tự",
+                value: 6,
+                message: "Mật khẩu có độ dài tối thiểu 6 kí tự",
               },
             })}
-            placeholder="Mật khẩu"
+            placeholder={t("signIn.password")}
             type="password"
             prefix={<LockOutlined />}
+            size="large"
           />
         </Box>
         <Box mt={2}>
-          <Button htmlType="submit" color="success" fullWidth>
-            Đăng nhập
+          <Button htmlType="submit" color="success" width="100%" size="large">
+            {t("signIn.signIn")}
           </Button>
         </Box>
       </form>

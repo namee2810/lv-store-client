@@ -28,6 +28,7 @@ interface BoxProps {
 
   backgroundColor?: string
   borderRadius?: number
+  textAlign?: "left" | "center" | "right"
   elevation?: number
 }
 
@@ -73,6 +74,7 @@ const Box = styled.div<BoxProps>`
 
   background-color: ${({ backgroundColor }) => backgroundColor || "#fff"};
   border-radius: ${({ borderRadius }) => borderRadius && borderRadius + "px"};
+  text-align: ${({ textAlign }) => textAlign};
   box-shadow: ${({ elevation }) => elevation && boxShadows[elevation - 1]};
 `
 
