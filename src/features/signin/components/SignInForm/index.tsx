@@ -96,7 +96,7 @@ export default function SignInForm() {
             {loading ? (
               <img
                 src={threeDotsSVG}
-                style={{ maxWidth: "50px" }}
+                style={{ maxWidth: "30px" }}
                 alt="loading"
               />
             ) : (

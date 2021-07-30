@@ -10,14 +10,14 @@ const Button = styled(AntButton)<ButtonProps>`
   width: ${({ width }) => width};
   background-color: ${({ color, theme }) => color && theme.colors[color]};
   color: ${({ color }) => color && "#fff"};
-  border-color: ${({ color, theme }) =>
-    color && theme.colors[color] + "!important"};
+  border-color: ${({ color, theme }) => color && theme.colors[color]};
 
   &:hover,
   &:focus {
     background-color: ${({ color, theme }) =>
       color && theme.colors[color + "_hover"]};
     color: ${({ color }) => color && "#fff"};
+    border-color: ${({ color, theme }) => color && theme.colors[color]};
   }
 `
 
