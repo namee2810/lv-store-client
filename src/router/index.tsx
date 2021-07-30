@@ -1,8 +1,8 @@
-import { AppRoute } from "defines/AppRoute"
 import homeRoutes from "features/home/routes"
 import signInRoutes from "features/signIn/routes"
 import { Helmet } from "react-helmet"
 import { BrowserRouter as Router, Route } from "react-router-dom"
+import { AppRoute } from "types/AppRoute"
 
 const routes: AppRoute[] = [...homeRoutes, ...signInRoutes]
 

@@ -1,18 +1,44 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons"
+import { useMutation } from "@apollo/client"
+import threeDotsSVG from "assets/images/three-dots.svg"
 import Box from "components/Box"
 import Button from "components/Button"
 import Input from "components/Input"
 import React from "react"
 import { useForm } from "react-hook-form"
 import { useTranslation } from "react-i18next"
+import { useHistory } from "react-router-dom"
 import { toast } from "react-toastify"
+import SIGN_IN from "services/apollo/mutations/signIn"
+import sha256 from "sha256"
 
 export default function SignInForm() {
   const { t } = useTranslation()
   const { register, handleSubmit } = useForm()
+  const [signIn, { loading }] = useMutation(SIGN_IN)
+  const history = useHistory()
 
   const onValid = (values: any) => {
-    console.log(values)
+    const { email, password } = values
+    signIn({
+      variables: {
+        email,
+        password: sha256(password),
+      },
+    })
+      .then((res) => {
+        const user = res.data.signIn
+        if (user) {
+          toast.success(t("signIn.success"))
+          history.replace("/")
+        } else {
+          toast.error(t("signIn.fail"))
+        }
+      })
+      .catch((err) => {
+        toast.error(t("common.error"))
+        console.log(err)
+      })
   }
   const onInvalid = (errors: any) => {
     for (let error in errors) toast.error(errors[error].message)
@@ -60,8 +86,22 @@ export default function SignInForm() {
           />
         </Box>
         <Box mt={2}>
-          <Button htmlType="submit" color="success" width="100%" size="large">
-            {t("signIn.signIn")}
+          <Button
+            htmlType="submit"
+            color="success"
+            width="100%"
+            size="large"
+            disabled={loading}
+          >
+            {loading ? (
+              <img
+                src={threeDotsSVG}
+                style={{ maxWidth: "30px" }}
+                alt="loading"
+              />
+            ) : (
+              t("signIn.signIn")
+            )}
           </Button>
         </Box>
       </form>

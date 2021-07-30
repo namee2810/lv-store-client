@@ -11,8 +11,7 @@ export default function SignIn() {
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
-      style={{ height: "100%" }}
-      backgroundColor="#f7fbff"
+      backgroundColor="#eaf8ff"
     >
       <Logo />
       <SignInForm />

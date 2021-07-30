@@ -1,5 +1,5 @@
-import { AppRoute } from "defines/AppRoute"
 import { lazy } from "react"
+import { AppRoute } from "types/AppRoute"
 
 const Home = lazy(() => import("."))
 
