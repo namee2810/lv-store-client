@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
       monospace;
   }
-  #root {
+  #root>div {
     height: 100vh;
   }
 
