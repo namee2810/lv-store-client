@@ -2,9 +2,11 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { User } from "types/User"
 
 const initialState: User = {
-  email: "",
-  image: "",
-  name: "",
+  user: {
+    email: "",
+    image: "",
+    name: "",
+  },
   token: "",
 }
 
@@ -13,9 +15,7 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     SIGN_IN(state, { payload }: PayloadAction<User>) {
-      state.email = payload.email
-      state.image = payload.image
-      state.name = payload.name
+      state.user = { ...payload.user }
       state.token = payload.token
     },
   },
