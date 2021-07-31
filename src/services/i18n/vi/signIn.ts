@@ -3,7 +3,7 @@ const signIn = {
   signIn: "Đăng nhập",
   emailRequired: "Hãy nhập email",
   passwordRequired: "Hãy nhập mật khẩu",
-  success: "✨ Đăng nhập thất bại",
+  success: "✨ Chào mừng trở lại {{name}}",
   fail: "Email hoặc mật khẩu không chính xác",
 }
 

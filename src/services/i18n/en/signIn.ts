@@ -3,7 +3,7 @@ const signIn = {
   signIn: "Sign in",
   emailRequired: "Email is required",
   passwordRequired: "Password is required",
-  success: "✨ Sign in successfully",
+  success: "✨ Welcome back {{name}}",
   fail: "Email or password is incorrect",
 }
 
