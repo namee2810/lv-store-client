@@ -3,7 +3,7 @@ import threeDotsSVG from "assets/images/three-dots.svg"
 import Box from "components/Box"
 import Button from "components/Button"
 import Input from "components/Input"
-import useSignIn from "features/signIn/hooks/useSignIn"
+import useSignIn from "hooks/useSignIn"
 import React from "react"
 import { useForm } from "react-hook-form"
 import { useTranslation } from "react-i18next"
@@ -43,6 +43,7 @@ export default function SignInForm() {
               },
             })}
             type="email"
+            value="dvn281002@gmail.com"
             placeholder="Email"
             prefix={<UserOutlined />}
             size="large"
@@ -58,6 +59,7 @@ export default function SignInForm() {
               },
             })}
             placeholder={t("signIn.password")}
+            value="123456"
             type="password"
             prefix={<LockOutlined />}
             size="large"
