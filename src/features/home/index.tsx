@@ -1,10 +1,11 @@
 import LoadingScreen from "components/LoadingScreen"
+import HomeLayout from "layouts/HomeLayout"
 import React from "react"
 
 export default function Home() {
   return (
-    <div>
+    <HomeLayout>
       <LoadingScreen />
-    </div>
+    </HomeLayout>
   )
 }
