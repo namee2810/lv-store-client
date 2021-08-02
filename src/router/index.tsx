@@ -1,12 +1,23 @@
+import customersRoutes from "features/customers/routes"
 import homeRoutes from "features/home/routes"
+import ordersRoutes from "features/orders/routes"
+import productsRoutes from "features/products/routes"
 import signInRoutes from "features/signIn/routes"
+import tradesRoutes from "features/trades/routes"
 import useAppSelector from "hooks/useAppSelector"
 import { Helmet } from "react-helmet"
 import { useTranslation } from "react-i18next"
 import { BrowserRouter as Router, Redirect, Route } from "react-router-dom"
 import { AppRoute } from "types/AppRoute"
 
-const routes: AppRoute[] = [...homeRoutes, ...signInRoutes]
+const routes: AppRoute[] = [
+  ...homeRoutes,
+  ...signInRoutes,
+  ...tradesRoutes,
+  ...ordersRoutes,
+  ...customersRoutes,
+  ...productsRoutes,
+]
 
 function AppRouter() {
   const { t } = useTranslation()

@@ -1,14 +1,14 @@
 import { lazy } from "react"
 import { AppRoute } from "types/AppRoute"
 
-const SignIn = lazy(() => import("."))
+const SignInPage = lazy(() => import("."))
 
 const signInRoutes: AppRoute[] = [
   {
-    name: "signIn.signIn",
+    name: "common.signIn",
     path: "/signin",
     exact: true,
-    component: SignIn,
+    component: SignInPage,
     requireAuth: false,
   },
 ]

@@ -34,11 +34,7 @@ export default function HomeLayout({ children }: HomeLayoutProps) {
       <GridArea area="sidebar">
         <SideBar />
       </GridArea>
-      <GridArea
-        area="main"
-        style={{ overflowY: "auto" }}
-        className="px-16 py-8"
-      >
+      <GridArea area="main" style={{ overflowY: "auto", padding: "8px" }}>
         {children}
       </GridArea>
     </Container>

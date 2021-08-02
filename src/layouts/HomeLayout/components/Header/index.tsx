@@ -1,32 +1,10 @@
 import { Badge } from "antd"
 import Box from "components/Box"
+import BoxItem from "components/BoxItem"
 import useAppSelector from "hooks/useAppSelector"
 import React from "react"
 import { AiOutlineBell } from "react-icons/ai"
 import { FiSun } from "react-icons/fi"
-import styled from "styled-components"
-
-const Item = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  margin: 0 8px;
-
-  border-radius: 8px;
-  cursor: pointer;
-
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04), 0 3.4px 13.4px rgba(0, 0, 0, 0.06),
-    0 15px 60px rgba(0, 0, 0, 0.1);
-
-  svg {
-    font-size: 22px;
-  }
-  img {
-    border-radius: 8px;
-  }
-`
 
 export default function Header() {
   const user = useAppSelector((state) => state.user.user)
@@ -36,21 +14,22 @@ export default function Header() {
       display="flex"
       alignItems="center"
       justifyContent="space-between"
+      flexDirection="row-reverse"
       p={1}
+      style={{ borderBottom: "1px solid #eee" }}
     >
-      <div></div>
       <Box display="flex">
-        <Item>
+        <BoxItem>
           <Badge count={1} size="small">
             <AiOutlineBell />
           </Badge>
-        </Item>
-        <Item>
+        </BoxItem>
+        <BoxItem ml={1}>
           <img src={user.image} alt="" />
-        </Item>
-        <Item>
+        </BoxItem>
+        <BoxItem ml={1}>
           <FiSun />
-        </Item>
+        </BoxItem>
       </Box>
     </Box>
   )

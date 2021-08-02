@@ -1,5 +1,3 @@
-const home = {
-  home: "Trang chủ",
-}
+const home = {}
 
 export default home
