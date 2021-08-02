@@ -1,5 +1,3 @@
-const home = {
-  home: "Home",
-}
+const home = {}
 
 export default home

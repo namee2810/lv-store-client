@@ -3,7 +3,7 @@ import Logo from "components/Logo"
 import Background from "./components/Background"
 import SignInForm from "./components/SignInForm"
 
-export default function SignIn() {
+export default function SignInPage() {
   return (
     <Box
       position="relative"

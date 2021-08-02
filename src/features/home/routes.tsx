@@ -5,7 +5,7 @@ const Home = lazy(() => import("."))
 
 const homeRoutes: AppRoute[] = [
   {
-    name: "home.home",
+    name: "common.home",
     path: "/",
     exact: true,
     component: Home,

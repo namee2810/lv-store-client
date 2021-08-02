@@ -1,7 +1,18 @@
 @import "antd/dist/antd.css";
 
+#root > div {
+  height: 100vh;
+}
+
 .ant-input-affix-wrapper:focus,
 .ant-input-affix-wrapper-focused {
   border-color: #26cb88 !important;
   box-shadow: 0 0 0 2px #26cb892f;
+}
+
+.active-link {
+  & > div {
+    background-color: #26cb88;
+    color: #fff;
+  }
 }

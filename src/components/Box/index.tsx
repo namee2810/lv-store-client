@@ -72,10 +72,15 @@ const Box = styled.div<BoxProps>`
   padding-bottom: ${({ pb, py }) => (pb ? pb * 8 + "px" : py && py * 8 + "px")};
   padding: ${({ p }) => p && p * 8 + "px"};
 
-  background-color: ${({ backgroundColor }) => backgroundColor || "#fff"};
+  background-color: ${({ backgroundColor, theme }) =>
+    backgroundColor
+      ? theme.colors[backgroundColor] || backgroundColor
+      : "#fff"};
   border-radius: ${({ borderRadius }) => borderRadius && borderRadius + "px"};
   text-align: ${({ textAlign }) => textAlign};
   box-shadow: ${({ elevation }) => elevation && boxShadows[elevation - 1]};
+
+  transition: all 0.25s;
 `
 
 export default Box

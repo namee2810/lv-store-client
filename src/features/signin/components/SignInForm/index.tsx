@@ -3,7 +3,7 @@ import threeDotsSVG from "assets/images/three-dots.svg"
 import Box from "components/Box"
 import Button from "components/Button"
 import Input from "components/Input"
-import useSignIn from "hooks/useSignIn"
+import useAuth from "hooks/useAuth"
 import React from "react"
 import { useForm } from "react-hook-form"
 import { useTranslation } from "react-i18next"
@@ -12,7 +12,7 @@ import { toast } from "react-toastify"
 export default function SignInForm() {
   const { t } = useTranslation()
   const { register, handleSubmit } = useForm()
-  const { signIn, loading } = useSignIn()
+  const { signIn, signInLoading } = useAuth()
 
   const onValid = (values: any) => {
     const { email, password } = values
@@ -71,16 +71,16 @@ export default function SignInForm() {
             color="success"
             width="100%"
             size="large"
-            disabled={loading}
+            disabled={signInLoading}
           >
-            {loading ? (
+            {signInLoading ? (
               <img
                 src={threeDotsSVG}
                 style={{ maxWidth: "30px" }}
-                alt="loading"
+                alt="signInLoading"
               />
             ) : (
-              t("signIn.signIn")
+              t("common.signIn")
             )}
           </Button>
         </Box>

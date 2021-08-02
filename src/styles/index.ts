@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
   * {
-        
     ::-webkit-scrollbar {
       width: 6px;
       height: 6px;
@@ -24,7 +23,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -32,10 +32,9 @@ const GlobalStyle = createGlobalStyle`
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
       monospace;
   }
-  #root>div {
-    height: 100vh;
+  a {
+    color: inherit;
   }
-
 `
 const colors = {
   primary: "#6380ff",
@@ -65,4 +64,4 @@ const device = {
 const theme = {
   colors,
 }
-export { GlobalStyle, theme, device }
+export { GlobalStyle, theme, device, colors }
