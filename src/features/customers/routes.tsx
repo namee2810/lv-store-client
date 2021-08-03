@@ -1,14 +1,14 @@
 import { lazy } from "react"
 import { AppRoute } from "types/AppRoute"
 
-const CustomersPage = lazy(() => import("."))
+const Customers = lazy(() => import("."))
 
 const customersRoutes: AppRoute[] = [
   {
     name: "common.customers",
     path: "/customers",
     exact: true,
-    component: CustomersPage,
+    component: Customers,
     requireAuth: true,
   },
 ]

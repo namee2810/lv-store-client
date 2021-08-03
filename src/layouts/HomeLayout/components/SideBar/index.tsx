@@ -5,11 +5,7 @@ import Logo from "components/Logo"
 import useAuth from "hooks/useAuth"
 import React from "react"
 import { useTranslation } from "react-i18next"
-import {
-  AiOutlineHome,
-  AiOutlinePoweroff,
-  AiOutlineSafetyCertificate,
-} from "react-icons/ai"
+import { AiOutlineHome, AiOutlinePoweroff } from "react-icons/ai"
 import { BiCreditCardAlt } from "react-icons/bi"
 import { FiTruck } from "react-icons/fi"
 import { GoPackage } from "react-icons/go"
@@ -49,11 +45,6 @@ const items = [
     name: "common.products",
     icon: <GoPackage />,
     href: "/products",
-  },
-  {
-    name: "common.users",
-    icon: <AiOutlineSafetyCertificate />,
-    href: "/users",
   },
 ]
 

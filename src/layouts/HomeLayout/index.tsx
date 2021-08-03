@@ -1,13 +1,12 @@
-import React, { ReactChild } from "react"
+import LoadingScreen from "components/LoadingScreen"
+import React, { Suspense } from "react"
 import styled from "styled-components"
 import Header from "./components/Header"
 import SideBar from "./components/SideBar"
+import HomeLayoutRouter from "./router"
 
 interface GridAreaProps {
   area: string
-}
-interface HomeLayoutProps {
-  children: ReactChild
 }
 
 const Container = styled.div`
@@ -25,7 +24,7 @@ const GridArea = styled.div<GridAreaProps>`
   grid-area: ${({ area }) => area};
 `
 
-export default function HomeLayout({ children }: HomeLayoutProps) {
+export default function HomeLayout() {
   return (
     <Container>
       <GridArea area="header">
@@ -35,7 +34,9 @@ export default function HomeLayout({ children }: HomeLayoutProps) {
         <SideBar />
       </GridArea>
       <GridArea area="main" style={{ overflowY: "auto", padding: "8px" }}>
-        {children}
+        <Suspense fallback={<LoadingScreen />}>
+          <HomeLayoutRouter />
+        </Suspense>
       </GridArea>
     </Container>
   )

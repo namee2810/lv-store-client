@@ -1,25 +1,28 @@
-import customersRoutes from "features/customers/routes"
-import homeRoutes from "features/home/routes"
-import ordersRoutes from "features/orders/routes"
-import productsRoutes from "features/products/routes"
 import signInRoutes from "features/signIn/routes"
-import tradesRoutes from "features/trades/routes"
 import useAppSelector from "hooks/useAppSelector"
+import HomeLayout from "layouts/HomeLayout"
 import { Helmet } from "react-helmet"
 import { useTranslation } from "react-i18next"
-import { BrowserRouter as Router, Redirect, Route } from "react-router-dom"
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom"
 import { AppRoute } from "types/AppRoute"
 
 const routes: AppRoute[] = [
-  ...homeRoutes,
+  {
+    name: "common.home",
+    path: "/",
+    exact: false,
+    component: HomeLayout,
+    requireAuth: true,
+  },
   ...signInRoutes,
-  ...tradesRoutes,
-  ...ordersRoutes,
-  ...customersRoutes,
-  ...productsRoutes,
 ]
 
-function AppRouter() {
+export default function AppRouter() {
   const { t } = useTranslation()
   const {
     user: { name },
@@ -27,23 +30,23 @@ function AppRouter() {
 
   return (
     <Router>
-      {routes.map((route, idx) => (
-        <Route
-          path={route.path}
-          exact={route.exact}
-          render={() => (
-            <>
-              {!name && route.requireAuth && <Redirect to="/signin" />}
-              {name && !route.requireAuth && <Redirect to="/" />}
-              <Helmet titleTemplate="LV Store | %s" title={t(route.name)} />
-              <route.component />
-            </>
-          )}
-          key={"route" + idx}
-        />
-      ))}
+      <Switch>
+        {routes.map((route, idx) => (
+          <Route
+            path={route.path}
+            exact={route.exact}
+            render={() => (
+              <>
+                {!name && route.requireAuth && <Redirect to="/signin" />}
+                {name && !route.requireAuth && <Redirect to="/" />}
+                <Helmet titleTemplate="LV Store | %s" title={t(route.name)} />
+                <route.component />
+              </>
+            )}
+            key={"route" + idx}
+          />
+        ))}
+      </Switch>
     </Router>
   )
 }
-
-export default AppRouter
