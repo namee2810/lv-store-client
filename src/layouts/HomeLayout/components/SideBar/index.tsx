@@ -24,27 +24,27 @@ const items = [
   {
     name: "common.home",
     icon: <AiOutlineHome />,
-    href: "/",
+    href: "/app",
   },
   {
     name: "common.trades",
     icon: <BiCreditCardAlt />,
-    href: "/trades",
+    href: "/app/trades",
   },
   {
     name: "common.orders",
     icon: <FiTruck />,
-    href: "/orders",
+    href: "/app/orders",
   },
   {
     name: "common.customers",
     icon: <MdPeopleOutline />,
-    href: "/customers",
+    href: "/app/customers",
   },
   {
     name: "common.products",
     icon: <GoPackage />,
-    href: "/products",
+    href: "/app/products",
   },
 ]
 

@@ -1,3 +1,4 @@
+import NotFoundScreen from "components/NotFoundScreen"
 import signInRoutes from "features/signIn/routes"
 import useAppSelector from "hooks/useAppSelector"
 import HomeLayout from "layouts/HomeLayout"
@@ -14,7 +15,7 @@ import { AppRoute } from "types/AppRoute"
 const routes: AppRoute[] = [
   {
     name: "common.home",
-    path: "/",
+    path: "/app",
     exact: false,
     component: HomeLayout,
     requireAuth: true,
@@ -38,7 +39,7 @@ export default function AppRouter() {
             render={() => (
               <>
                 {!name && route.requireAuth && <Redirect to="/signin" />}
-                {name && !route.requireAuth && <Redirect to="/" />}
+                {name && !route.requireAuth && <Redirect to="/app" />}
                 <Helmet titleTemplate="LV Store | %s" title={t(route.name)} />
                 <route.component />
               </>
@@ -46,6 +47,7 @@ export default function AppRouter() {
             key={"route" + idx}
           />
         ))}
+        <Route path="*" component={NotFoundScreen} />
       </Switch>
     </Router>
   )

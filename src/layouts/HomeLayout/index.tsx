@@ -1,5 +1,4 @@
-import LoadingScreen from "components/LoadingScreen"
-import React, { Suspense } from "react"
+import React from "react"
 import styled from "styled-components"
 import Header from "./components/Header"
 import SideBar from "./components/SideBar"
@@ -34,9 +33,7 @@ export default function HomeLayout() {
         <SideBar />
       </GridArea>
       <GridArea area="main" style={{ overflowY: "auto", padding: "8px" }}>
-        <Suspense fallback={<LoadingScreen />}>
-          <HomeLayoutRouter />
-        </Suspense>
+        <HomeLayoutRouter />
       </GridArea>
     </Container>
   )

@@ -8,6 +8,7 @@ const common = {
   customers: "Khách hàng",
   products: "Sản phẩm",
   users: "Người dùng",
+  gotoHome: "Về trang chủ",
 }
 
 export default common
