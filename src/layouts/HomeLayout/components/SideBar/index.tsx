@@ -5,12 +5,12 @@ import Logo from "components/Logo"
 import useAuth from "hooks/useAuth"
 import React from "react"
 import { useTranslation } from "react-i18next"
-import { AiOutlineHome, AiOutlinePoweroff } from "react-icons/ai"
+import { AiOutlinePoweroff } from "react-icons/ai"
 import { BiCreditCardAlt } from "react-icons/bi"
 import { FiTruck } from "react-icons/fi"
 import { GoPackage } from "react-icons/go"
 import { MdPeopleOutline } from "react-icons/md"
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import styled from "styled-components"
 
 const BoxItemSignOut = styled(BoxItem)`
@@ -21,11 +21,6 @@ const BoxItemSignOut = styled(BoxItem)`
 `
 
 const items = [
-  {
-    name: "common.home",
-    icon: <AiOutlineHome />,
-    href: "/app",
-  },
   {
     name: "common.trades",
     icon: <BiCreditCardAlt />,
@@ -59,10 +54,13 @@ export default function SideBar() {
       alignItems="center"
       justifyContent="space-between"
       height="100%"
-      py={1}
+      pt={1}
+      pb={2}
       style={{ borderRight: "1px solid #eee" }}
     >
-      <Logo />
+      <Link to="/app">
+        <Logo />
+      </Link>
       <div>
         {items.map((item, idx) => (
           <NavLink
@@ -71,7 +69,7 @@ export default function SideBar() {
             activeClassName="active-link"
           >
             <Tooltip title={t(item.name)} placement="right">
-              <BoxItem mb={2}>{item.icon}</BoxItem>
+              <BoxItem mb={3}>{item.icon}</BoxItem>
             </Tooltip>
           </NavLink>
         ))}

@@ -32,14 +32,17 @@ export default function AppRouter() {
   return (
     <Router>
       <Switch>
+        <Route path="/" exact>
+          <Redirect to="/app" />
+        </Route>
         {routes.map((route, idx) => (
           <Route
             path={route.path}
             exact={route.exact}
             render={() => (
               <>
-                {!name && route.requireAuth && <Redirect to="/signin" />}
-                {name && !route.requireAuth && <Redirect to="/app" />}
+                {/* {!name && route.requireAuth && <Redirect to="/signin" />}
+                {name && !route.requireAuth && <Redirect to="/app" />} */}
                 <Helmet titleTemplate="LV Store | %s" title={t(route.name)} />
                 <route.component />
               </>

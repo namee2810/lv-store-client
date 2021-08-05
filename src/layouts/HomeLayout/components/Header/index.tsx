@@ -15,8 +15,9 @@ export default function Header() {
       alignItems="center"
       justifyContent="space-between"
       flexDirection="row-reverse"
-      p={1}
-      style={{ borderBottom: "1px solid #eee" }}
+      px={2}
+      py={1}
+      elevation={1}
     >
       <Box display="flex">
         <BoxItem>
@@ -24,10 +25,10 @@ export default function Header() {
             <AiOutlineBell />
           </Badge>
         </BoxItem>
-        <BoxItem ml={1}>
+        <BoxItem ml={2}>
           <img src={user.image} alt="" />
         </BoxItem>
-        <BoxItem ml={1}>
+        <BoxItem ml={2}>
           <FiSun />
         </BoxItem>
       </Box>
