@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
       monospace;
   }
-  a {
+  a, a:hover {
     color: inherit;
   }
 `
