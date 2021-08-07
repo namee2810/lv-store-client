@@ -9,6 +9,8 @@ const common = {
   products: "Sản phẩm",
   users: "Người dùng",
   gotoHome: "Về trang chủ",
+  revenue: "Doanh thu",
+  profit: "Lợi nhuận",
 }
 
 export default common
