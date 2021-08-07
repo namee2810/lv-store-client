@@ -3,6 +3,7 @@ import Box from "components/Box"
 import React from "react"
 import RevenueChart from "./components/RevenueChart"
 import StatisticCards from "./components/StatisticCards"
+import TradesChart from "./components/TradesChart"
 
 export default function Home() {
   return (
@@ -13,7 +14,9 @@ export default function Home() {
           <Col span={12}>
             <RevenueChart />
           </Col>
-          <Col span={12}>Hi</Col>
+          <Col span={12}>
+            <TradesChart />
+          </Col>
         </Row>
       </Box>
     </>
