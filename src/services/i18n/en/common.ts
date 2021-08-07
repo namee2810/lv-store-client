@@ -8,6 +8,9 @@ const common = {
   customers: "Customers",
   products: "Products",
   users: "Users",
+  gotoHome: "Go to home",
+  revenue: "Renevue",
+  profit: "Profit",
 }
 
 export default common

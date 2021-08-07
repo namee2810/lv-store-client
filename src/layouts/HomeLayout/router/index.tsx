@@ -24,7 +24,7 @@ export default function HomeLayoutRouter() {
     <Switch>
       {routes.map((route, idx) => (
         <Route
-          path={route.path}
+          path={`/app${route.path}`}
           exact={route.exact}
           render={() => (
             <>

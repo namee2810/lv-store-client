@@ -1,3 +1,4 @@
+import Box from "components/Box"
 import LoadingScreen from "components/LoadingScreen"
 import React, { Suspense } from "react"
 import styled from "styled-components"
@@ -5,7 +6,7 @@ import Header from "./components/Header"
 import SideBar from "./components/SideBar"
 import HomeLayoutRouter from "./router"
 
-interface GridAreaProps {
+interface BoxAreaProps {
   area: string
 }
 
@@ -20,24 +21,29 @@ const Container = styled.div`
   overflow: hidden;
   background-color: #fafafa;
 `
-const GridArea = styled.div<GridAreaProps>`
+const BoxArea = styled(Box)<BoxAreaProps>`
   grid-area: ${({ area }) => area};
 `
 
 export default function HomeLayout() {
   return (
     <Container>
-      <GridArea area="header">
+      <BoxArea area="header">
         <Header />
-      </GridArea>
-      <GridArea area="sidebar">
+      </BoxArea>
+      <BoxArea area="sidebar">
         <SideBar />
-      </GridArea>
-      <GridArea area="main" style={{ overflowY: "auto", padding: "8px" }}>
+      </BoxArea>
+      <BoxArea
+        area="main"
+        style={{ overflowY: "auto" }}
+        backgroundColor="transparent"
+        p={2}
+      >
         <Suspense fallback={<LoadingScreen />}>
           <HomeLayoutRouter />
         </Suspense>
-      </GridArea>
+      </BoxArea>
     </Container>
   )
 }
