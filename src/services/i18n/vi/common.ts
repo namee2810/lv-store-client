@@ -11,6 +11,21 @@ const common = {
   gotoHome: "Về trang chủ",
   revenue: "Doanh thu",
   profit: "Lợi nhuận",
+  name: "Tên",
+  type: "Loại",
+  time: "Thời gian",
+  types: {
+    trade: "Giao dịch",
+    order: "Đơn hàng",
+    customer: "Khách hàng",
+    product: "Sản phẩm",
+  },
+  action: "Hành động",
+  actions: {
+    create: "Tạo",
+    delete: "Xóa",
+    update: "Sửa",
+  },
 }
 
 export default common
