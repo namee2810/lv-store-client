@@ -1,13 +1,56 @@
-import { Badge } from "antd"
+import { Badge, Dropdown, Menu } from "antd"
+import EnFlag from "assets/images/en.svg"
+import ViFlag from "assets/images/vi.svg"
 import Box from "components/Box"
 import BoxItem from "components/BoxItem"
 import useAppSelector from "hooks/useAppSelector"
-import React from "react"
-import { AiOutlineBell } from "react-icons/ai"
-import { FiSun } from "react-icons/fi"
+import React, { useState } from "react"
+import { useTranslation } from "react-i18next"
+import { AiOutlineBell, AiOutlineSetting } from "react-icons/ai"
 
 export default function Header() {
   const user = useAppSelector((state) => state.user.user)
+  const { t, i18n } = useTranslation()
+  const currentLang = i18n.language
+  const [settingsMenuVisible, setSettingsMenuVisible] = useState(false)
+
+  const handleChangeLang = (lang: string) => {
+    i18n.changeLanguage(lang)
+  }
+
+  const SettingsMenu = (
+    <Menu selectable={false}>
+      <Menu.Item>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          backgroundColor="transparent"
+        >
+          <Box backgroundColor="transparent">{t("header.settings.lang")}</Box>
+          <Box display="flex" ml={2} backgroundColor="transparent">
+            <Box backgroundColor="transparent">
+              <img
+                src={ViFlag}
+                alt=""
+                width={"20px"}
+                className={currentLang === "vi" ? "current-lang" : ""}
+                onClick={() => handleChangeLang("vi")}
+              />
+            </Box>
+            <Box ml={0.5} backgroundColor="transparent">
+              <img
+                src={EnFlag}
+                alt=""
+                width="20px"
+                className={currentLang === "en" ? "current-lang" : ""}
+                onClick={() => handleChangeLang("en")}
+              />
+            </Box>
+          </Box>
+        </Box>
+      </Menu.Item>
+    </Menu>
+  )
 
   return (
     <Box
@@ -28,9 +71,16 @@ export default function Header() {
         <BoxItem ml={2}>
           <img src={user.image} alt="" />
         </BoxItem>
-        <BoxItem ml={2}>
-          <FiSun />
-        </BoxItem>
+        <Dropdown
+          overlay={SettingsMenu}
+          trigger={["click"]}
+          onVisibleChange={(flag) => setSettingsMenuVisible(flag)}
+          visible={settingsMenuVisible}
+        >
+          <BoxItem ml={2}>
+            <AiOutlineSetting />
+          </BoxItem>
+        </Dropdown>
       </Box>
     </Box>
   )
