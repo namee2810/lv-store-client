@@ -1,4 +1,4 @@
-import logoImg from "assets/images/logo.svg"
+import LogoImg from "assets/images/logo.svg"
 import React from "react"
 import styled, { keyframes } from "styled-components"
 
@@ -15,5 +15,5 @@ const Img = styled.img`
 `
 
 export default function Logo() {
-  return <Img src={logoImg} alt="" />
+  return <Img src={LogoImg} alt="" />
 }

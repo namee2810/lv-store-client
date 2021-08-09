@@ -4,6 +4,7 @@ const home = {
   totalOrders: "Total orders",
   totalCustomers: "Total customers",
   totalProducts: "Total products",
+  recentlyActivity: "Recently Activity",
 }
 
 export default home

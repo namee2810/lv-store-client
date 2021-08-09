@@ -35,37 +35,35 @@ export default function TradesChart() {
       <Text size="16" weight="600">
         {t("home.tradesInDay")}
       </Text>
-      <Box mt={2}>
-        <ResponsiveContainer height={250}>
-          <AreaChart data={data} margin={{ left: 16, right: 16 }}>
-            <CartesianGrid strokeDasharray="10" vertical={false} />
-            <Tooltip
-              labelFormatter={(time) => moment(time).format("HH:mm DD/MM")}
-            />
-            <Area
-              type="monotone"
-              dataKey="value"
-              stroke={colors.success}
-              strokeWidth={3}
-              fillOpacity={0.12}
-              fill={colors.success}
-              dot
-              name={t("common.trades")}
-            />
-            <Legend
-              verticalAlign="top"
-              align="right"
-              iconType="circle"
-              iconSize={10}
-              height={40}
-            />
-            <XAxis
-              dataKey="time"
-              tickFormatter={(time) => moment(time).format("HH:mm")}
-            />
-          </AreaChart>
-        </ResponsiveContainer>
-      </Box>
+      <ResponsiveContainer height={270}>
+        <AreaChart data={data} margin={{ left: 16, right: 16 }}>
+          <CartesianGrid strokeDasharray="10" vertical={false} />
+          <Tooltip
+            labelFormatter={(time) => moment(time).format("HH:mm DD/MM")}
+          />
+          <Area
+            type="monotone"
+            dataKey="value"
+            stroke={colors.success}
+            strokeWidth={3}
+            fillOpacity={0.12}
+            fill={colors.success}
+            dot
+            name={t("common.trades")}
+          />
+          <Legend
+            verticalAlign="top"
+            align="right"
+            iconType="circle"
+            iconSize={10}
+            height={40}
+          />
+          <XAxis
+            dataKey="time"
+            tickFormatter={(time) => moment(time).format("HH:mm")}
+          />
+        </AreaChart>
+      </ResponsiveContainer>
     </Box>
   )
 }

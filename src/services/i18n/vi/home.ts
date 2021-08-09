@@ -4,6 +4,7 @@ const home = {
   totalOrders: "Đơn hàng",
   totalCustomers: "Khách hàng",
   totalProducts: "Sản phẩm",
+  recentlyActivity: "Hoạt động gần đây",
 }
 
 export default home
