@@ -31,7 +31,7 @@ export default function TradesChart() {
   const { t } = useTranslation()
 
   return (
-    <Box p={2} elevation={1}>
+    <Box p={2}>
       <Text size="16" weight="600">
         {t("home.tradesInDay")}
       </Text>

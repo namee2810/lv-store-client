@@ -1,4 +1,4 @@
-import { Badge, Dropdown, Menu } from "antd"
+import { Badge, Dropdown, Menu, Switch } from "antd"
 import EnFlag from "assets/images/en.svg"
 import ViFlag from "assets/images/vi.svg"
 import Box from "components/Box"
@@ -7,6 +7,7 @@ import useAppSelector from "hooks/useAppSelector"
 import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { AiOutlineBell, AiOutlineSetting } from "react-icons/ai"
+import { BiMoon, BiSun } from "react-icons/bi"
 
 export default function Header() {
   const user = useAppSelector((state) => state.user.user)
@@ -49,6 +50,28 @@ export default function Header() {
           </Box>
         </Box>
       </Menu.Item>
+      <Menu.Item>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          backgroundColor="transparent"
+        >
+          <Box backgroundColor="transparent">{t("header.settings.theme")}</Box>
+          <Box
+            display="flex"
+            alignItems="center"
+            ml={2}
+            backgroundColor="transparent"
+          >
+            <Switch
+              checkedChildren={<BiSun />}
+              unCheckedChildren={<BiMoon />}
+              defaultChecked
+              className="theme-switch"
+            />
+          </Box>
+        </Box>
+      </Menu.Item>
     </Menu>
   )
 
@@ -60,7 +83,6 @@ export default function Header() {
       flexDirection="row-reverse"
       px={2}
       py={1}
-      elevation={1}
     >
       <Box display="flex">
         <BoxItem>

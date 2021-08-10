@@ -2,7 +2,7 @@ import Box from "components/Box"
 import Text from "components/Text"
 import React from "react"
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai"
-import { Line, LineChart, ResponsiveContainer } from "recharts"
+import { Line, LineChart } from "recharts"
 import { colors } from "styles"
 
 interface CardProps {
@@ -39,7 +39,6 @@ export default function Card({ name, value, grow = 0 }: CardProps) {
       justifyContent="space-between"
       alignItems="center"
       height="100px"
-      elevation={1}
       p={2}
     >
       <Box>
@@ -54,7 +53,7 @@ export default function Card({ name, value, grow = 0 }: CardProps) {
       </Box>
       <Box>
         <Box>
-          <ResponsiveContainer width={100} height={20}>
+          <Box width="100px" height="20px">
             <LineChart data={data}>
               <Line
                 type="monotone"
@@ -64,7 +63,7 @@ export default function Card({ name, value, grow = 0 }: CardProps) {
                 strokeWidth={2}
               />
             </LineChart>
-          </ResponsiveContainer>
+          </Box>
         </Box>
         <Box>
           <Text color={grow >= 0 ? "success" : "error"} size="16" align="right">

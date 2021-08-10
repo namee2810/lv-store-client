@@ -1,4 +1,4 @@
 export default interface Settings {
-  lang: "vi" | "en"
-  theme: "light" | "dark"
+  lang: string
+  theme: string
 }
