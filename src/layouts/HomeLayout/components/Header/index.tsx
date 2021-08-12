@@ -1,8 +1,10 @@
-import { Badge, Dropdown, Menu, Switch } from "antd"
+import { Badge, Dropdown, Switch } from "antd"
 import EnFlag from "assets/images/en.svg"
 import ViFlag from "assets/images/vi.svg"
 import Box from "components/Box"
 import BoxItem from "components/BoxItem"
+import Menu from "components/Menu"
+import Text from "components/Text"
 import useAppSelector from "hooks/useAppSelector"
 import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
@@ -20,16 +22,12 @@ export default function Header() {
   }
 
   const SettingsMenu = (
-    <Menu selectable={false}>
+    <Menu>
       <Menu.Item>
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          backgroundColor="transparent"
-        >
-          <Box backgroundColor="transparent">{t("header.settings.lang")}</Box>
-          <Box display="flex" ml={2} backgroundColor="transparent">
-            <Box backgroundColor="transparent">
+        <Box display="flex" justifyContent="space-between">
+          <Text>{t("header.settings.lang")}</Text>
+          <Box display="flex" ml={2}>
+            <Box>
               <img
                 src={ViFlag}
                 alt=""
@@ -38,7 +36,7 @@ export default function Header() {
                 onClick={() => handleChangeLang("vi")}
               />
             </Box>
-            <Box ml={0.5} backgroundColor="transparent">
+            <Box ml={0.5}>
               <img
                 src={EnFlag}
                 alt=""
@@ -51,18 +49,9 @@ export default function Header() {
         </Box>
       </Menu.Item>
       <Menu.Item>
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          backgroundColor="transparent"
-        >
-          <Box backgroundColor="transparent">{t("header.settings.theme")}</Box>
-          <Box
-            display="flex"
-            alignItems="center"
-            ml={2}
-            backgroundColor="transparent"
-          >
+        <Box display="flex" justifyContent="space-between">
+          <Text>{t("header.settings.theme")}</Text>
+          <Box display="flex" alignItems="center" ml={2}>
             <Switch
               checkedChildren={<BiSun />}
               unCheckedChildren={<BiMoon />}
@@ -83,6 +72,7 @@ export default function Header() {
       flexDirection="row-reverse"
       px={2}
       py={1}
+      backgroundColor="box"
     >
       <Box display="flex">
         <BoxItem>

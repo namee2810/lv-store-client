@@ -1,6 +1,7 @@
 const header = {
   settings: {
     lang: "Language",
+    theme: "Theme",
   },
 }
 

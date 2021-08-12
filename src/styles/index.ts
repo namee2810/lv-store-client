@@ -36,7 +36,6 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
   }
 `
-const colors = {}
 
 const device = {
   mobileS: `(max-width: 375px)`,
@@ -46,8 +45,4 @@ const device = {
   laptop: `(max-width: 1440px)`,
   desktop: `(min-width: 1440px)`,
 }
-const theme = {
-  colors,
-  main: localStorage.getItem("theme") || "light",
-}
-export { GlobalStyle, theme, device, colors }
+export { GlobalStyle, device }

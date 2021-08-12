@@ -11,7 +11,7 @@ export default function SignInPage() {
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
-      backgroundColor="#eaf8ff"
+      backgroundColor="body"
     >
       <Logo />
       <SignInForm />

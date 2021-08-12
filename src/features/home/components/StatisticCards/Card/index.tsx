@@ -3,14 +3,13 @@ import Text from "components/Text"
 import React from "react"
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai"
 import { Line, LineChart } from "recharts"
-import { colors } from "styles"
+import colors from "styles/colors"
 
 interface CardProps {
   name: string
   value: string
   grow: number
 }
-
 const data = [
   {
     value: 500,
@@ -40,10 +39,11 @@ export default function Card({ name, value, grow = 0 }: CardProps) {
       alignItems="center"
       height="100px"
       p={2}
+      backgroundColor="box"
     >
       <Box>
         <Box>
-          <Text size="16" weight="600" color="gray">
+          <Text size="16" weight="600">
             {name}
           </Text>
         </Box>

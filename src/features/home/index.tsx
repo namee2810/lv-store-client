@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <StatisticCards />
-      <Box mt={2} backgroundColor="transparent">
+      <Box mt={2}>
         <Row gutter={16}>
           <Col span={12}>
             <RevenueChart />
@@ -20,7 +20,7 @@ export default function Home() {
           </Col>
         </Row>
       </Box>
-      <Box mt={2} backgroundColor="transparent">
+      <Box mt={2}>
         <Row gutter={16}>
           <Col span={12}>
             <RecentlyActivity />

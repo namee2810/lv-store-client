@@ -73,9 +73,7 @@ const Box = styled.div<BoxProps>`
   padding: ${({ p }) => p && p * 8 + "px"};
 
   background-color: ${({ backgroundColor, theme }) =>
-    backgroundColor
-      ? theme.colors[backgroundColor] || backgroundColor
-      : "#fff"};
+    backgroundColor && (theme[backgroundColor] || backgroundColor)};
   border-radius: ${({ borderRadius }) => borderRadius && borderRadius + "px"};
   text-align: ${({ textAlign }) => textAlign};
   box-shadow: ${({ elevation }) => elevation && boxShadows[elevation - 1]};

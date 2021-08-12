@@ -5,7 +5,7 @@ const Input = styled(AntInput)`
   border-color: #dedede;
 
   &:hover {
-    border-color: ${({ theme }) => theme.colors.success + "!important"};
+    border-color: ${({ theme }) => theme.success + "!important"};
   }
 `
 

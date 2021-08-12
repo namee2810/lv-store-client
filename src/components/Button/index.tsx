@@ -8,16 +8,15 @@ interface ButtonProps {
 
 const Button = styled(AntButton)<ButtonProps>`
   width: ${({ width }) => width};
-  background-color: ${({ color, theme }) => color && theme.colors[color]};
+  background-color: ${({ color, theme }) => color && theme[color]};
   color: ${({ color }) => color && "#fff"};
-  border-color: ${({ color, theme }) => color && theme.colors[color]};
+  border-color: ${({ color, theme }) => color && theme[color]};
 
   &:hover,
   &:focus {
-    background-color: ${({ color, theme }) =>
-      color && theme.colors[color + "_hover"]};
+    background-color: ${({ color, theme }) => color && theme[color + "_hover"]};
     color: ${({ color }) => color && "#fff"};
-    border-color: ${({ color, theme }) => color && theme.colors[color]};
+    border-color: ${({ color, theme }) => color && theme[color]};
   }
 `
 

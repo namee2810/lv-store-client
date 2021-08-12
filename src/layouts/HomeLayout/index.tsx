@@ -19,10 +19,10 @@ const Container = styled.div`
     "sidebar main";
   height: 100vh;
   overflow: hidden;
-  background-color: #fafafa;
 `
 const BoxArea = styled(Box)<BoxAreaProps>`
   grid-area: ${({ area }) => area};
+  background-color: ${({ theme, area }) => area === "main" && theme.body};
 `
 
 export default function HomeLayout() {
@@ -34,12 +34,7 @@ export default function HomeLayout() {
       <BoxArea area="sidebar">
         <SideBar />
       </BoxArea>
-      <BoxArea
-        area="main"
-        style={{ overflowY: "auto" }}
-        backgroundColor="transparent"
-        p={2}
-      >
+      <BoxArea area="main" style={{ overflowY: "auto" }} p={2}>
         <Suspense fallback={<LoadingScreen />}>
           <HomeLayoutRouter />
         </Suspense>

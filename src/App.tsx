@@ -9,8 +9,9 @@ import apolloClient from "services/apollo"
 import "services/i18n"
 import { store } from "store"
 import { ThemeProvider } from "styled-components"
-import { GlobalStyle, theme } from "styles"
+import { GlobalStyle } from "styles"
 import "styles/styles.scss"
+import lightTheme from "styles/theme/light"
 
 toast.configure({ limit: 6 })
 
@@ -20,7 +21,7 @@ function App() {
       <GlobalStyle />
       <ReduxProvider store={store}>
         <ApolloProvider client={apolloClient}>
-          <ThemeProvider theme={theme}>
+          <ThemeProvider theme={lightTheme}>
             <Suspense fallback={<LoadingScreen />}>
               <AppRouter />
             </Suspense>

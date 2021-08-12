@@ -8,9 +8,10 @@ interface TextProps {
 }
 
 const Text = styled.div<TextProps>`
+  color: ${({ theme }) => theme.text};
   font-size: ${({ size }) => size + "px"};
   font-weight: ${({ weight }) => weight};
-  color: ${({ color, theme }) => color && (theme.colors[color] || color)};
+  color: ${({ color, theme }) => color && (theme[color] || color)};
   text-align: ${({ align }) => align};
 `
 

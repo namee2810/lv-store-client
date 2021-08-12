@@ -16,10 +16,8 @@ import styled from "styled-components"
 const BoxItemSignOut = styled(BoxItem)`
   &:hover {
     background-color: #f00;
-    color: #fff;
   }
 `
-
 const items = [
   {
     name: "common.trades",
@@ -56,7 +54,7 @@ export default function SideBar() {
       height="100%"
       pt={1}
       pb={2}
-      style={{ borderRight: "1px solid #eee" }}
+      backgroundColor="box"
     >
       <Link to="/app">
         <Logo />

@@ -1,16 +1,13 @@
-const light = {
-  primary: "#6380ff",
-  primary_hover: "#5070fa",
-  success: "#26CB88",
-  success_hover: "#1fb578",
-  error: "#FB6884",
-  error_hover: "#ff4568",
-  warn: "#ff9914",
-  warn_hover: "#e38812",
-  white: "#fff",
-  black: "#000",
-  lightgray: "#ededed",
-  gray: "#888",
-  lightblue: "#def2ff",
-  purple: "#a985ff",
+import colors from "../colors"
+
+const lightTheme = {
+  ...colors,
+  box: "#242526",
+  body: "#181818",
+  text: "#fff",
+  table: "#242526",
+  tableBorder: "#464646",
+  boxItem: "#353535",
 }
+
+export default lightTheme
