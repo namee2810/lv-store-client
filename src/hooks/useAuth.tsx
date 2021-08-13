@@ -7,7 +7,7 @@ import sha256 from "sha256"
 import {
   SIGN_IN as SIGN_IN_ACTION,
   SIGN_OUT as SIGN_OUT_ACTION,
-} from "store/slices/userSlice"
+} from "store/slices/user"
 
 export interface SignInArgs {
   email: string

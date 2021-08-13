@@ -2,10 +2,12 @@ import colors from "../colors"
 
 const darkTheme = {
   ...colors,
-  background: "#444",
-  text: "#eee",
-  header: "#333",
-  sideBar: "#333",
+  box: "#242526",
+  body: "#181818",
+  text: "#fff",
+  table: "#242526",
+  tableBorder: "#464646",
+  boxItem: "#353535",
 }
 
 export default darkTheme

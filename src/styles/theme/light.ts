@@ -2,12 +2,12 @@ import colors from "../colors"
 
 const lightTheme = {
   ...colors,
-  box: "#242526",
-  body: "#181818",
-  text: "#fff",
-  table: "#242526",
-  tableBorder: "#464646",
-  boxItem: "#353535",
+  box: "#fff",
+  body: "#f9f9f9",
+  text: "#030303",
+  table: "#fff",
+  tableBorder: "#f0f0f0",
+  boxItem: "#fff",
 }
 
 export default lightTheme

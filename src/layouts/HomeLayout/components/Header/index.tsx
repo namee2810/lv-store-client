@@ -5,20 +5,27 @@ import Box from "components/Box"
 import BoxItem from "components/BoxItem"
 import Menu from "components/Menu"
 import Text from "components/Text"
+import useAppDispatch from "hooks/useAppDispatch"
 import useAppSelector from "hooks/useAppSelector"
 import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { AiOutlineBell, AiOutlineSetting } from "react-icons/ai"
 import { BiMoon, BiSun } from "react-icons/bi"
+import { SET_THEME } from "store/slices/settings"
 
 export default function Header() {
   const user = useAppSelector((state) => state.user.user)
+  const dispatch = useAppDispatch()
   const { t, i18n } = useTranslation()
   const currentLang = i18n.language
   const [settingsMenuVisible, setSettingsMenuVisible] = useState(false)
 
   const handleChangeLang = (lang: string) => {
     i18n.changeLanguage(lang)
+  }
+  const handleChangeTheme = (checked: boolean) => {
+    if (checked) dispatch(SET_THEME("light"))
+    else dispatch(SET_THEME("dark"))
   }
 
   const SettingsMenu = (
@@ -57,6 +64,7 @@ export default function Header() {
               unCheckedChildren={<BiMoon />}
               defaultChecked
               className="theme-switch"
+              onChange={handleChangeTheme}
             />
           </Box>
         </Box>
