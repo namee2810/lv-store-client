@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { User } from "types/User"
+import { User } from "types/IUser"
 
 const initialState: User = {
   user: {
@@ -26,6 +26,6 @@ const userSlice = createSlice({
     },
   },
 })
-
+export const userSelector = (state: User) => state.user
 export const { SIGN_IN, SIGN_OUT } = userSlice.actions
 export default userSlice.reducer

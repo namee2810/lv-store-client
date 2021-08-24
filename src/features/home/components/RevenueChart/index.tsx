@@ -11,7 +11,7 @@ import {
   Tooltip,
   XAxis,
 } from "recharts"
-import { colors } from "styles"
+import colors from "styles/colors"
 
 interface ChartData {
   date: string
@@ -61,7 +61,7 @@ export default function RevenueChart() {
   const { t } = useTranslation()
 
   return (
-    <Box p={2} elevation={1}>
+    <Box p={2} backgroundColor="box">
       <Text size="16" weight="600">
         {t("common.revenue")}
       </Text>
@@ -69,7 +69,7 @@ export default function RevenueChart() {
         <AreaChart data={data} margin={{ left: 16, right: 16 }}>
           <CartesianGrid strokeDasharray="10" vertical={false} />
           <Tooltip
-            formatter={(value: number) => `${value.toLocaleString()} VND`}
+            formatter={(value: number) => `${value.toLocaleString()}đ`}
           />
           <Area
             type="monotone"

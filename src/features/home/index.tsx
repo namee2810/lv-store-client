@@ -3,14 +3,14 @@ import Box from "components/Box"
 import React from "react"
 import RecentlyActivity from "./components/RecentlyActivity"
 import RevenueChart from "./components/RevenueChart"
-import StatisticCards from "./components/StatisticCards"
+import Statistic from "./components/Statistic"
 import TradesChart from "./components/TradesChart"
 
 export default function Home() {
   return (
     <>
-      <StatisticCards />
-      <Box mt={2} backgroundColor="transparent">
+      <Statistic />
+      <Box mt={2}>
         <Row gutter={16}>
           <Col span={12}>
             <RevenueChart />
@@ -20,7 +20,7 @@ export default function Home() {
           </Col>
         </Row>
       </Box>
-      <Box mt={2} backgroundColor="transparent">
+      <Box mt={2}>
         <Row gutter={16}>
           <Col span={12}>
             <RecentlyActivity />

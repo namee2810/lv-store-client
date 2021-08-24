@@ -31,6 +31,7 @@ export default function SignInForm() {
       borderRadius={8}
       width="350px"
       style={{ zIndex: 999 }}
+      backgroundColor="box"
     >
       <form onSubmit={handleSubmit(onValid, onInvalid)}>
         <Box>

@@ -12,7 +12,7 @@ import {
   Tooltip,
   XAxis,
 } from "recharts"
-import { colors } from "styles"
+import colors from "styles/colors"
 
 interface ChartData {
   time: Date
@@ -31,7 +31,7 @@ export default function TradesChart() {
   const { t } = useTranslation()
 
   return (
-    <Box p={2} elevation={1}>
+    <Box p={2} backgroundColor="box">
       <Text size="16" weight="600">
         {t("home.tradesInDay")}
       </Text>

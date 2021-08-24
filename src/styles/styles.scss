@@ -9,15 +9,20 @@
   border-color: #26cb88 !important;
   box-shadow: 0 0 0 2px #26cb892f;
 }
-.ant-table-thead > tr > th {
-  background-color: transparent;
-  color: #888;
+.ant-dropdown-menu {
+  padding: 0;
+  &-item:hover,
+  &-submenu-title:hover {
+    background-color: initial;
+  }
 }
 
 .active-link {
   & > div {
     background-color: #26cb88;
-    color: #fff;
+    svg {
+      color: #fff !important;
+    }
   }
 }
 

@@ -14,18 +14,13 @@ const common = {
   name: "Tên",
   type: "Loại",
   time: "Thời gian",
-  types: {
-    trade: "Giao dịch",
-    order: "Đơn hàng",
-    customer: "Khách hàng",
-    product: "Sản phẩm",
-  },
-  action: "Hành động",
-  actions: {
-    create: "Tạo",
-    delete: "Xóa",
-    update: "Sửa",
-  },
+  customerName: "Tên khách hàng",
+  purchasedProducts: "Sản phẩm đã mua",
+  totalAmount: "Thành tiền",
+  status: "Trạng thái",
+  note: "Ghi chú",
+  createdAt: "Tạo lúc",
+  updatedAt: "Cập nhật lúc",
 }
 
 export default common

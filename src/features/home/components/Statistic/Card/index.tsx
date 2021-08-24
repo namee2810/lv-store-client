@@ -3,14 +3,13 @@ import Text from "components/Text"
 import React from "react"
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai"
 import { Line, LineChart, ResponsiveContainer } from "recharts"
-import { colors } from "styles"
+import colors from "styles/colors"
 
 interface CardProps {
   name: string
   value: string
   grow: number
 }
-
 const data = [
   {
     value: 500,
@@ -39,12 +38,12 @@ export default function Card({ name, value, grow = 0 }: CardProps) {
       justifyContent="space-between"
       alignItems="center"
       height="100px"
-      elevation={1}
       p={2}
+      backgroundColor="box"
     >
       <Box>
         <Box>
-          <Text size="16" weight="600" color="gray">
+          <Text size="16" weight="600">
             {name}
           </Text>
         </Box>
@@ -53,8 +52,8 @@ export default function Card({ name, value, grow = 0 }: CardProps) {
         </Box>
       </Box>
       <Box>
-        <Box>
-          <ResponsiveContainer width={100} height={20}>
+        <Box width="100px" height="20px">
+          <ResponsiveContainer>
             <LineChart data={data}>
               <Line
                 type="monotone"
