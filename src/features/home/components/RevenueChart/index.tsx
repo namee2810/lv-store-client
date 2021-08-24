@@ -69,7 +69,7 @@ export default function RevenueChart() {
         <AreaChart data={data} margin={{ left: 16, right: 16 }}>
           <CartesianGrid strokeDasharray="10" vertical={false} />
           <Tooltip
-            formatter={(value: number) => `${value.toLocaleString()} VND`}
+            formatter={(value: number) => `${value.toLocaleString()}đ`}
           />
           <Area
             type="monotone"

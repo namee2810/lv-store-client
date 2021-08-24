@@ -14,18 +14,13 @@ const common = {
   name: "Name",
   type: "Type",
   time: "Time",
-  types: {
-    trade: "Trade",
-    order: "Order",
-    customer: "Customer",
-    product: "Product",
-  },
-  action: "Action",
-  actions: {
-    create: "Create",
-    delete: "Delete",
-    update: "Update",
-  },
+  customerName: "Customer name",
+  purchasedProducts: "Purchased products",
+  totalAmount: "Total amount",
+  status: "Status",
+  note: "Note",
+  createdAt: "Created at",
+  updatedAt: "Updated at",
 }
 
 export default common

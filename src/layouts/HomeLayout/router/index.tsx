@@ -7,7 +7,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { useTranslation } from "react-i18next"
 import { Route, Switch } from "react-router-dom"
-import { AppRoute } from "types/AppRoute"
+import { AppRoute } from "types/IAppRoute"
 
 const routes: AppRoute[] = [
   ...homeRoutes,

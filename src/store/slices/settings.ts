@@ -1,8 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit"
 
+const themes = ["light", "dark"]
+
 const initialState = {
-  lang: "vi",
-  theme: "light",
+  theme: (() => {
+    const theme = localStorage.getItem("theme")
+    if (theme && themes.includes(theme)) return theme
+    else {
+      localStorage.setItem("theme", themes[0])
+      return themes[0]
+    }
+  })(),
 }
 
 const settingsSlice = createSlice({
@@ -11,6 +19,7 @@ const settingsSlice = createSlice({
   reducers: {
     SET_THEME(state, { payload }) {
       state.theme = payload
+      localStorage.setItem("theme", payload)
     },
   },
 })

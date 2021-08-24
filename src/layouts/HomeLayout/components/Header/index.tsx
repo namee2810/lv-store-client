@@ -14,7 +14,8 @@ import { BiMoon, BiSun } from "react-icons/bi"
 import { SET_THEME } from "store/slices/settings"
 
 export default function Header() {
-  const user = useAppSelector((state) => state.user.user)
+  const { user } = useAppSelector((state) => state.user)
+  const { theme } = useAppSelector((state) => state.settings)
   const dispatch = useAppDispatch()
   const { t, i18n } = useTranslation()
   const currentLang = i18n.language
@@ -62,7 +63,7 @@ export default function Header() {
             <Switch
               checkedChildren={<BiSun />}
               unCheckedChildren={<BiMoon />}
-              defaultChecked
+              defaultChecked={theme === "light"}
               className="theme-switch"
               onChange={handleChangeTheme}
             />

@@ -4,6 +4,7 @@ import styled from "styled-components"
 interface ButtonProps {
   color?: string
   width?: string
+  disabled?: boolean
 }
 
 const Button = styled(AntButton)<ButtonProps>`

@@ -20,7 +20,9 @@
 .active-link {
   & > div {
     background-color: #26cb88;
-    color: #fff;
+    svg {
+      color: #fff !important;
+    }
   }
 }
 

@@ -1,5 +1,5 @@
 import { lazy } from "react"
-import { AppRoute } from "types/AppRoute"
+import { AppRoute } from "types/IAppRoute"
 
 const Products = lazy(() => import("."))
 
